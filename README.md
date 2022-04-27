@@ -8,4 +8,3 @@ feel free to jump in!
 - vite
 - tailwind
 - gsap
-# two-playground
