@@ -1,5 +1,5 @@
 .collage-image {
-  @apply w-[30vw] absolute top-1/2 left-1/2;
+  @apply w-[30vw] absolute top-1/2 left-1/2 transition-[filter] duration-300;
 }
 .collage-image-1 {
   @apply w-[30vw] top-[37vw] left-[22vh];
