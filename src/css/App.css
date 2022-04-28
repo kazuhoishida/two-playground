@@ -1,0 +1,39 @@
+.collage-image {
+  @apply w-[30vw] absolute top-1/2 left-1/2;
+}
+.collage-image-1 {
+  @apply w-[30vw] top-[37vw] left-[22vh];
+}
+.collage-image-2 {
+  @apply w-[30vw] top-[12vw] left-[15vh];
+}
+.collage-image-3 {
+  @apply w-[30vw] top-[13vw] left-[38vh];
+}
+.collage-image-4 {
+  @apply w-[30vw] top-[24vw] left-[40vh];
+}
+.collage-image-5 {
+  @apply w-[30vw] top-[25vw] left-[65vh];
+}
+.collage-image-6 {
+  @apply w-[30vw] top-[36vw] left-[85vh];
+}
+.collage-image-7 {
+  @apply w-[30vw] top-[47vw] left-[10vh];
+}
+.collage-image-8 {
+  @apply w-[30vw] top-[58vw] left-[20vh];
+}
+.collage-image-9 {
+  @apply w-[30vw] top-[69vw] left-[30vh];
+}
+.collage-image-10 {
+  @apply w-[30vw] top-[55vw] left-[50vh];
+}
+.collage-image-11 {
+  @apply w-[30vw] top-[47vw] left-[76vh];
+}
+.collage-image-12 {
+  @apply w-[30vw] top-[40vw] left-[80vh];
+}
