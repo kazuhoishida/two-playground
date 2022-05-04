@@ -11,6 +11,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "src/index.html"),
         nolook: resolve(__dirname, "src/nolook/index.html"),
+        neue: resolve(__dirname, "src/neue/index.html"),
       },
     },
   },
