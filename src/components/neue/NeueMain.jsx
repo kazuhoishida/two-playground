@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import useWindowSize from "../../hooks/useWindowSize"
 
 export default function NeueMain() {
-  const textClass = "absolute top-[10vh] left-0 px-20 text-[7vw] leading-tight"
+  const textClass = "absolute top-[15vh] left-0 px-20 text-[7vw] leading-tight"
   const size = useWindowSize()
 
   const [mousePos, setMousePos] = useState({
