@@ -8,3 +8,28 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* card */
+.card-style {
+  position: relative;
+  transform-style: preserve-3d;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 58/89;
+  transition: 0.5s all ease-in;
+}
+.normal-style {
+  transform: rotateY(180deg);
+}
+.flipped-style {
+  transform: rotateY(0deg);
+}
+.frontface {
+  background-size: contain;
+  background-repeat: no-repeat;
+  backface-visibility: hidden;
+}
+.backface {
+  background-size: contain;
+  background-repeat: no-repeat;
+}

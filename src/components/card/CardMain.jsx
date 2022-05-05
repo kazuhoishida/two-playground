@@ -1,17 +1,16 @@
-import { useState, useEffect, useContext, createContext } from "react"
-
-const moveContext = createContext({
-  isFirstMove: false,
-  setIsFirstMove: () => {},
-})
+import { useState, useEffect } from "react"
+import SingleCard from "./SingleCard"
+import { moveContext, flipContext } from "./CardContext"
 
 export default function CardMain() {
   const cardImages = [{ src: "../../image/card/card01.png" }, { src: "../../image/card/card02.png" }, { src: "../../image/card/card03.png" }]
   const [cards, setCards] = useState([])
+  const [rounds, setRounds] = useState(0)
 
   const shuffleCards = () => {
-    const shuffledDeck = [...cardImages, ...cardImages].sort(() => Math.random(0, 1) - 0.5).map((card) => ({ ...card, id: Math.random(0, 1) }))
+    const shuffledDeck = [...cardImages, ...cardImages].sort(() => Math.random(0, 1) - 0.5).map((card) => ({ ...card, id: Math.random(0, 1), matched: false }))
     setCards(shuffledDeck)
+    setRounds(0)
   }
   // initialize
   useEffect(() => {
@@ -22,56 +21,45 @@ export default function CardMain() {
   const value = { isFirstMove, setIsFirstMove }
 
   const [flipCardId, setFlipCardId] = useState({
-    first: { id: null, src: null },
-    second: { id: null, src: null },
+    first: null,
+    second: null,
   })
-
-  const [isFlipped, setIsFlipped] = useState([])
+  const flipValue = { flipCardId, setFlipCardId }
 
   useEffect(() => {
     if (flipCardId.first === null || flipCardId.second === null) return
 
-    console.log(isFirstMove)
-    console.log(flipCardId)
-    if (flipCardId.first === flipCardId.second) {
-      console.log("it is a pair")
+    if (flipCardId.first.src === flipCardId.second.src) {
+      for (let i = 0; i < cards.length; i++) {
+        if (cards[i].src === flipCardId.first.src) cards[i].matched = true
+      }
+      setCards(cards)
     } else {
+      setRounds(rounds + 1)
       console.log("not match")
     }
+
+    setTimeout(() => setFlipCardId({ first: null, second: null }), 1000)
   }, [isFirstMove])
-
-  const flipCard = (e) => {
-    const currCardId = e.target.dataset.id
-    const currCardSrc = e.target.dataset.src
-    console.log(currCardId)
-    console.log(isFirstMove)
-    isFirstMove ? setFlipCardId({ ...flipCardId, first: { id: currCardId, src: currCardSrc } }) : setFlipCardId({ ...flipCardId, second: { id: currCardId, src: currCardSrc } })
-
-    setIsFirstMove(!isFirstMove)
-  }
 
   return (
     <moveContext.Provider value={value}>
-      <button onClick={shuffleCards}>reset</button>
-      <div className="grid grid-cols-6 gap-2">
-        {cards.map((card, index) => (
-          <SingleCard card={card} turned={flipCardId.first.id == card.id || flipCardId.second.id == card.id} flipCard={flipCard} key={`${card.id}-${index}`} />
-        ))}
-      </div>
+      <flipContext.Provider value={flipValue}>
+        <div className="pt-10 text-white">
+          <h1 className="text-center mb-10">TYPEFINDER</h1>
+          <div className="grid grid-cols-6 gap-4 w-4/5 mx-auto">
+            {cards.map((card, index) => (
+              <SingleCard card={card} turned={flipCardId.first == card || flipCardId.second == card || card.matched} key={`${card.id}-${index}`} />
+            ))}
+          </div>
+          <div className="flex justify-between absolute bottom-10 left-[10%] w-4/5">
+            <p className="">
+              <span className="mr-2">{rounds}</span>rounds
+            </p>
+            <button onClick={shuffleCards}>Shuffle</button>
+          </div>
+        </div>
+      </flipContext.Provider>
     </moveContext.Provider>
-  )
-}
-
-function SingleCard({ card: { src, id }, turned, flipCard }) {
-  // const { isFirstMove, setIsFirstMove } = useContext(moveContext)
-
-  const handleFlipCard = (e) => {
-    flipCard(e)
-  }
-  return (
-    <div className="relative" data-turned={turned}>
-      <img src="../../image/card/back.png" alt="back" className="absolute top-0 left-0" data-src={src} data-id={id} onClick={handleFlipCard} />
-      <img src={src} alt="front" className="absolute top-0 left-0" data-src={src} data-id={id} onClick={handleFlipCard} />
-    </div>
   )
 }
