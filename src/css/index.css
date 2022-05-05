@@ -16,20 +16,28 @@ body {
   width: 100%;
   height: auto;
   aspect-ratio: 58/89;
-  transition: 0.5s all ease-in;
+  transition: 0.35s all ease-in;
+  cursor: grab;
 }
 .normal-style {
-  transform: rotateY(180deg);
+  transform: rotateY(0deg);
 }
 .flipped-style {
-  transform: rotateY(0deg);
+  transform: rotateY(-180deg);
+}
+.normal-style:hover {
+  transform: rotateY(0deg) translate3d(0, 0, -10px);
+  box-shadow: 2px 2px 1px 1px black;
 }
 .frontface {
   background-size: contain;
   background-repeat: no-repeat;
   backface-visibility: hidden;
+  transform: rotateY(180deg);
 }
 .backface {
   background-size: contain;
   background-repeat: no-repeat;
+  backface-visibility: hidden;
+  transform: rotateY(0deg);
 }
