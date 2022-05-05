@@ -58,9 +58,9 @@ export default function CardMain() {
     }
 
     if (rounds < cards.length) {
-      setMessage("Congratulations!")
+      setMessage("Congratulations! Do you want to play again?")
     } else {
-      setMessage("not bad, actually")
+      setMessage("Hmm...Do you want to play again?")
     }
   }, [cards])
 
@@ -72,17 +72,17 @@ export default function CardMain() {
   return (
     <>
       <div className="pt-10 text-white">
-        <h1 className="text-center text-16 mb-10">TYPEFINDER</h1>
-        <div className="grid grid-cols-6 gap-4 w-3/5 mx-auto">
+        <h1 className="text-center text-16 mb-6">TYPEFINDER</h1>
+        <div className="grid grid-cols-6 gap-x-6 gap-y-2 w-3/5 mx-auto">
           {cards.map((card, index) => (
             <SingleCard card={card} turned={flipCardId.first == card || flipCardId.second == card || card.matched} clickable={clickable} flipCard={flipCard} key={`${card.id}-${index}`} />
           ))}
         </div>
-        <p className="text-center mt-10">{message}</p>
-        <div className="flex justify-between absolute bottom-10 left-[10%] w-4/5">
+        <div className="flex justify-between absolute bottom-6 left-[10%] w-4/5">
           <p className="">
             <span className="mr-2">{rounds}</span>rounds
           </p>
+          <p>{message}</p>
           <button onClick={shuffleCards}>Shuffle</button>
         </div>
       </div>
