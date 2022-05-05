@@ -1,0 +1,1 @@
+import{j as e,c as r}from"./index.44470380.js";import{N as t}from"./NolookSidebarLeft.03ae11e1.js";function o(){return e("div",{className:"App",children:e(t,{})})}r.createRoot(document.getElementById("root")).render(e(React.StrictMode,{children:e(o,{})}));
