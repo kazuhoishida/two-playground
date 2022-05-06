@@ -1,39 +1,39 @@
 .collage-image {
-  @apply w-[30vw] absolute top-1/2 left-1/2 transition-[filter] duration-300;
+  @apply w-[10vw] absolute transition-[filter] duration-300;
 }
 .collage-image-1 {
-  @apply w-[30vw] top-[37vw] left-[22vh];
+  @apply w-[24vw] top-[15vh] left-[2vw];
 }
 .collage-image-2 {
-  @apply w-[30vw] top-[12vw] left-[15vh];
+  @apply w-[25vw] bottom-[-8vh] left-[8vw];
 }
 .collage-image-3 {
-  @apply w-[30vw] top-[13vw] left-[38vh];
+  @apply w-[28vw] top-[0vh] right-[2vw];
 }
 .collage-image-4 {
-  @apply w-[30vw] top-[24vw] left-[40vh];
+  @apply w-[6vw] top-[-10vh] left-[16vw];
 }
 .collage-image-5 {
-  @apply w-[30vw] top-[25vw] left-[65vh];
+  @apply w-[10vw] bottom-[8vh] right-[10vw];
 }
 .collage-image-6 {
-  @apply w-[30vw] top-[36vw] left-[85vh];
+  @apply w-[13vw] top-[45vh] left-[-1vw];
 }
 .collage-image-7 {
-  @apply w-[30vw] top-[47vw] left-[10vh];
+  @apply w-[6vw] top-[60vh] right-[6vw];
 }
 .collage-image-8 {
-  @apply w-[30vw] top-[58vw] left-[20vh];
+  @apply w-[13vw] top-[24vh] right-[3vw];
 }
 .collage-image-9 {
-  @apply w-[30vw] top-[69vw] left-[30vh];
+  @apply w-[10vw] bottom-[39vh] left-[10vw];
 }
-.collage-image-10 {
-  @apply w-[30vw] top-[55vw] left-[50vh];
+/* .collage-image-10 {
+  @apply w-[10vw] top-[55vh] left-[50vw];
 }
 .collage-image-11 {
-  @apply w-[30vw] top-[47vw] left-[76vh];
+  @apply w-[10vw] top-[47vh] left-[76vw];
 }
 .collage-image-12 {
-  @apply w-[30vw] top-[40vw] left-[80vh];
-}
+  @apply w-[10vw] top-[40vh] left-[80vw];
+} */
