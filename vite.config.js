@@ -12,6 +12,7 @@ export default defineConfig({
         main: resolve(__dirname, "src/index.html"),
         nolook: resolve(__dirname, "src/nolook/index.html"),
         neue: resolve(__dirname, "src/neue/index.html"),
+        typefinder: resolve(__dirname, "src/typefinder/index.html"),
       },
     },
   },
