@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>circle copy@2x</title>
+    <g id="desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="desktop---game-01" transform="translate(-510.000000, -915.000000)">
+            <g id="circle-copy" transform="translate(510.000000, 915.000000)">
+                <polygon id="Path" points="0 0 24 0 24 24 0 24"></polygon>
+                <path d="M12.3333333,4 C7.725,4 4,7.725 4,12.3333333 C4,16.9416667 7.725,20.6666667 12.3333333,20.6666667 C16.9416667,20.6666667 20.6666667,16.9416667 20.6666667,12.3333333 C20.6666667,7.725 16.9416667,4 12.3333333,4 Z M12.3333333,19 C8.65833333,19 5.66666667,16.0083333 5.66666667,12.3333333 C5.66666667,8.65833333 8.65833333,5.66666667 12.3333333,5.66666667 C16.0083333,5.66666667 19,8.65833333 19,12.3333333 C19,16.0083333 16.0083333,19 12.3333333,19 Z" id="Shape" fill="#F65945" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

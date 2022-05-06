@@ -20,14 +20,14 @@ body {
   cursor: grab;
 }
 .normal-style {
-  transform: rotateY(0deg);
+  transform: perspective(1000px) rotateY(0deg);
 }
 .flipped-style {
-  transform: rotateY(-180deg);
+  transform: perspective(1000px) rotateY(-180deg);
 }
 .normal-style:hover {
-  transform: rotateY(0deg) translate3d(0, 0, -10px);
-  box-shadow: 2px 2px 1px 1px black;
+  transform: rotateY(0deg) translate3d(0, 0, -18px);
+  box-shadow: 3px 3px 4px black;
 }
 .card-image {
   width: 100%;
