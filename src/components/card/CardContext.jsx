@@ -1,13 +1,7 @@
-import { createContext } from "react"
+import { atom } from "jotai"
 
-export const moveContext = createContext({
-  isFirstMove: false,
-  setIsFirstMove: () => {},
-})
-export const flipContext = createContext({
-  flipCardId: {
-    first: { id: null, src: null },
-    second: { id: null, src: null },
-  },
-  setFlipCardId: () => {},
+export const isFirstMoveAtom = atom(false)
+export const flipCardIdAtom = atom({
+  first: { id: null, src: null },
+  second: { id: null, src: null },
 })

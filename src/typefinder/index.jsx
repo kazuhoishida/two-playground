@@ -5,7 +5,7 @@ import CardMain from "../components/card/CardMain"
 
 function CardApp() {
   return (
-    <section className="bg-[#0f0f0f] w-full min-h-screen">
+    <section className="bg-[#1f1f1f] w-full min-h-screen">
       <CardMain />
     </section>
   )
