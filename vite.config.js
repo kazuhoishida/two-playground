@@ -13,6 +13,7 @@ export default defineConfig({
         nolook: resolve(__dirname, "src/nolook/index.html"),
         neue: resolve(__dirname, "src/neue/index.html"),
         typefinder: resolve(__dirname, "src/typefinder/index.html"),
+        readymag: resolve(__dirname, "src/readymag/index.html"),
       },
     },
   },
