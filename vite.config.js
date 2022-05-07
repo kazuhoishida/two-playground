@@ -14,6 +14,7 @@ export default defineConfig({
         neue: resolve(__dirname, "src/neue/index.html"),
         typefinder: resolve(__dirname, "src/typefinder/index.html"),
         readymag: resolve(__dirname, "src/readymag/index.html"),
+        vitamontreal: resolve(__dirname, "src/vitamontreal/index.html"),
       },
     },
   },
