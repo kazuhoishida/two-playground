@@ -1,8 +1,7 @@
 import { useRef, useEffect } from "react"
 import * as Matter from "matter-js"
 import useWindowSize from "../../hooks/useWindowSize"
-import TextureA from "../../image/viva/shape_A.png"
-import { shape_A } from "./bodies"
+import { body_A, body_N, body_I, body_C } from "./bodies"
 
 export default function VivaDefyGravity() {
   const canvasRef = useRef(null)
@@ -15,8 +14,6 @@ export default function VivaDefyGravity() {
       Runner = Matter.Runner,
       Bodies = Matter.Bodies,
       Composite = Matter.Composite,
-      Composites = Matter.Composites,
-      Common = Matter.Common,
       MouseConstraint = Matter.MouseConstraint,
       Mouse = Matter.Mouse
 
@@ -38,7 +35,7 @@ export default function VivaDefyGravity() {
     })
 
     // reverse gravity
-    engine.gravity.y = -1
+    engine.gravity.y = -0.3
 
     // run the renderer
     Render.run(render)
@@ -48,25 +45,18 @@ export default function VivaDefyGravity() {
     Runner.run(runner, engine)
 
     // add boundaries
+    // in these order: top, top-left, top-right, left, right, bottom
     Composite.add(world, [
-      Bodies.rectangle(WINDOW_SIZE.width / 2, 0, WINDOW_SIZE.width, 200, { isStatic: true, render: { visible: false } }),
+      Bodies.rectangle(WINDOW_SIZE.width / 2, -50, WINDOW_SIZE.width, 100, { isStatic: true, render: { visible: false } }),
+      Bodies.rectangle(0, 0, WINDOW_SIZE.width / 2, 180, { isStatic: true, render: { visible: false } }),
+      Bodies.rectangle(WINDOW_SIZE.width + 100, 0, WINDOW_SIZE.width, 180, { isStatic: true, render: { visible: false } }),
       Bodies.rectangle(-50, WINDOW_SIZE.height / 2, 100, WINDOW_SIZE.height, { isStatic: true }),
       Bodies.rectangle(WINDOW_SIZE.width + 50, WINDOW_SIZE.height / 2, 100, WINDOW_SIZE.height, { isStatic: true }),
       Bodies.rectangle(WINDOW_SIZE.width / 2, WINDOW_SIZE.height + 50, WINDOW_SIZE.width, 100, { isStatic: true }),
     ])
 
     //add floating bodies
-    const body_A = Bodies.fromVertices(100, WINDOW_SIZE.height / 2, shape_A, {
-      restitution: 0.7,
-      render: {
-        sprite: {
-          texture: TextureA,
-          xScale: 1,
-          yScale: 1,
-        },
-      },
-    })
-    Composite.add(world, [body_A])
+    Composite.add(world, [body_A, body_N, body_I, body_C])
 
     // add mouse control
     const mouse = Mouse.create(render.canvas),

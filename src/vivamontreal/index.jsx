@@ -9,7 +9,7 @@ function VivamontrealApp() {
     <div className="relative">
       <div className="fixed top-0 left-0 w-full text-36 font-bold flex justify-between px-20 pt-6 z-50">
         <p>VIVA!</p>
-        <p>Time to try Defying Gravity</p>
+        <p>Defying Gravity</p>
       </div>
       <VivaDefyGravity />
     </div>
