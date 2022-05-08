@@ -16,6 +16,7 @@ export default defineConfig({
         typefinder: resolve(__dirname, "src/typefinder/index.html"),
         readymag: resolve(__dirname, "src/readymag/index.html"),
         vivamontreal: resolve(__dirname, "src/vivamontreal/index.html"),
+        wadf: resolve(__dirname, "src/wadf/index.html"),
       },
     },
   },

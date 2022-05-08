@@ -71,7 +71,7 @@ export default function CardMain() {
       if (cards[i].matched === false) return
     }
 
-    if (rounds < cards.length) {
+    if (rounds < cards.length / 2) {
       setMessage("Congratulations! Do you want to play again? 👉")
     } else {
       setMessage("Hmm...Do you want to play again? 👉")
