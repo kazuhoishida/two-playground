@@ -1,0 +1,1 @@
+import{r as s}from"./index.fafe8bdb.js";function u(){const[t,n]=s.exports.useState({mouseX:0,mouseY:0});return s.exports.useEffect(()=>{const e=o=>{n({x:o.clientX,y:o.clientY})};return window.addEventListener("mousemove",e),()=>window.removeEventListener("mousemove",e)},[]),t}export{u};
