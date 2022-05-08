@@ -1,5 +1,5 @@
-import Arrow from "../image/arrow.svg"
-import Hamburger from "../image/hamburger.svg"
+import Arrow from "../../image/arrow.svg"
+import Hamburger from "../../image/hamburger.svg"
 
 export default function NolookSidebarRight() {
   return (

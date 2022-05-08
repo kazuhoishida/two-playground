@@ -1,26 +1,24 @@
-import { useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import useWindowSize from "../../hooks/useWindowSize"
+import useMousePos from "../../hooks/useMousePos"
 
 export default function NeueMain() {
   const textClass = "absolute top-[15vh] left-0 px-20 text-[7vw] leading-tight"
   const size = useWindowSize()
-
-  const [mousePos, setMousePos] = useState({
-    mouseX: 0,
-    mouseY: 0,
-  })
+  const mousePos = useMousePos()
   const canvasRef = useRef(null)
   const containerRef = useRef()
 
-  useEffect(() => {
-    const mouseMoveListener = (e) => {
-      let currentX = e.pageX - containerRef.current.offsetLeft
-      let currentY = e.pageY - containerRef.current.offsetTop
-      setMousePos({ x: currentX / 1, y: currentY / 1 })
-    }
-    canvasRef.current.addEventListener("mousemove", mouseMoveListener)
-    return () => canvasRef.current.removeEventListener("mousemove", mouseMoveListener)
-  }, [])
+  const draw = useCallback(
+    (context, mousePos) => {
+      context.globalCompositeOperation = "destination-out"
+      context.fillStyle = "#00ff00"
+      context.beginPath()
+      context.arc(mousePos.x, mousePos.y, size.width / 20, 0, 2 * Math.PI)
+      context.fill()
+    },
+    [mousePos, canvasRef]
+  )
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -28,13 +26,10 @@ export default function NeueMain() {
     context.fillStyle = "#ffffff"
     context.fillRect(0, 0, size.width, size.height)
 
-    canvas.addEventListener("mousemove", (mousePos) => {
-      context.globalCompositeOperation = "destination-out"
-      context.fillStyle = "#00ff00"
-      context.beginPath()
-      context.arc(mousePos.x, mousePos.y, size.width / 20, 0, 2 * Math.PI)
-      context.fill()
-    })
+    // drawing on mouse move
+    canvas.addEventListener("mousemove", (mousePos) => draw(context, mousePos))
+
+    return () => canvas.removeEventListener("mousemove", (mousePos) => draw(context, mousePos))
   }, [])
 
   return (
