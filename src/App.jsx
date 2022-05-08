@@ -1,14 +1,7 @@
-import { useState } from "react"
-import logo from "./image/logo.svg"
 import "./css/App.css"
-import Header from "./components/NolookSidebarLeft"
 
 function App() {
-  return (
-    <div className="App">
-      <Header />
-    </div>
-  )
+  return <div className="App"></div>
 }
 
 export default App

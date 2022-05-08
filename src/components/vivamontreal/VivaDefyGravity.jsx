@@ -80,5 +80,5 @@ export default function VivaDefyGravity() {
       max: { x: WINDOW_SIZE.width, y: WINDOW_SIZE.height },
     })
   }, [])
-  return <div ref={canvasRef} />
+  return <div ref={canvasRef} className="overflow-hidden h-screen" />
 }
