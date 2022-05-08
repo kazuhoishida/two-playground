@@ -1,0 +1,1 @@
+import{j as e,c as t}from"./index.97661f6f.js";/* empty css            */function r(){return e("div",{className:"App"})}t.createRoot(document.getElementById("root")).render(e(React.StrictMode,{children:e(r,{})}));
