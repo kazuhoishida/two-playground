@@ -1,0 +1,1 @@
+import{j as e,c as t}from"./index.fafe8bdb.js";/* empty css            */import{N as o}from"./NolookSidebarLeft.f77a508c.js";function r(){return e("div",{className:"App",children:e(o,{})})}t.createRoot(document.getElementById("root")).render(e(React.StrictMode,{children:e(r,{})}));

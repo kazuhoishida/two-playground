@@ -1,9 +1,9 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 import "../css/index.css"
-import NolookMain from "../components/NolookMain"
-import NolookSidebarLeft from "../components/NolookSidebarLeft"
-import NolookSidebarRight from "../components/NolookSidebarRight"
+import NolookMain from "../components/nolook/NolookMain"
+import NolookSidebarLeft from "../components/nolook/NolookSidebarLeft"
+import NolookSidebarRight from "../components/nolook/NolookSidebarRight"
 
 function NolookApp() {
   return (
