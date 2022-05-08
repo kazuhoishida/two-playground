@@ -1,26 +1,16 @@
-import { useState, useRef, useEffect } from "react"
-import MainImage from "../image/kv@2x.webp"
+import { useRef, useEffect } from "react"
+import MainImage from "../../image/kv@2x.webp"
 import { gsap } from "gsap"
+import useMousePos from "../../hooks/useMousePos"
 
 export default function NolookMain() {
-  const [mousePos, setMousePos] = useState({
-    mouseX: 0,
-    mouseY: 0,
-  })
+  const mousePos = useMousePos()
   const imageRef = useRef()
   const textRef = useRef()
   const bgRef = useRef()
 
   useEffect(() => {
-    const mouseMoveListener = (e) => {
-      setMousePos({ x: e.clientX, y: e.clientY })
-    }
-    window.addEventListener("mousemove", mouseMoveListener)
-    return () => window.removeEventListener("mousemove", mouseMoveListener)
-  }, [])
-
-  useEffect(() => {
-    if (imageRef.current == undefined || bgRef.current == undefined || textRef.current == undefined) return
+    if (!imageRef.current || !bgRef.current || !textRef.current) return
 
     gsap.to(imageRef.current, {
       duration: 0.6,
