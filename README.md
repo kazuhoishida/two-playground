@@ -9,18 +9,9 @@ feel free to jump in!
 - tailwind
 - postcss
 - gsap
+- jotai
+- matter.js
 
-& deploy to github pages
+& deploy to github pages via github actions
 
-### deploy to github page
-
-```
-yarn build
-
-#need to add force option
-git add src/dist/ -f
-git commit -m "build"
-
-#push to gh-pages branch
-git subtree push --prefix src/dist origin gh-pages
-```
+https://anicecompany.github.io/two-playground/
